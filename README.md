@@ -28,6 +28,19 @@ An output conforms when it carries all five obligations, or explicitly declares 
 
 The line STRUCK holds is between certifying the material and judging the use: it certifies that an output met its prestated intended use, and says nothing about whether that use was the right one. Certify the material, never judge the art.
 
+## How STRUCK carries CRAFT's six conditions
+
+CRAFT disciplines its six conditions inside the chain; STRUCK is where each one reaches the face of the output. What CRAFT gets from STRUCK, condition by condition:
+
+1. **Decision Context.** The output carries what it was built and tested for, and leaves the worth-call to whoever acts on it.
+2. **Technical Ontology.** The weakest supporting dimension and every flag are exposed; an obligation that does not apply is declared, not dropped.
+3. **Measurement Instruments.** The instrument's uncertainty travels on the face of the output, never collapsed into one figure.
+4. **Pre-Specified Criteria.** The output states, in advance and in world terms, what would show it wrong.
+5. **Explicit Decision Logic.** The judgment of sufficiency is left to the consumer, and kept readable for automated ones.
+6. **Feedback with Propagation.** Every rung is labeled, so an error in a released output can be traced back; a losing position is kept, so a resolution can be revisited.
+
+The full worked account is in [`struck-craft-condition-map-0_1_0.md`](struck-craft-condition-map-0_1_0.md).
+
 ## Relations
 
 STRUCK is independently adoptable: taking STRUCK requires taking nothing else, and STRUCK does not require CRAFT. The dependency runs the other way. CRAFT depends on ORE and STRUCK to account for what enters and leaves its chain, and a CRAFT certification is not complete without them. STRUCK draws its legibility principle from [CRAFT](https://github.com/CrossWalkri/craft-meta-standard), and its floors from the Precision-First Design Standard and the Adverse-Signal Engagement Principle, but nothing it inherits makes it need CRAFT to stand. *(See the round-room figure in the [CRAFT](https://github.com/CrossWalkri/craft-meta-standard) repository for how the three sit together.)*
