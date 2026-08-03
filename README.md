@@ -41,6 +41,12 @@ CRAFT disciplines its six conditions inside the chain; STRUCK is where each one 
 
 The full worked account is in [`struck-craft-condition-map-0_1_0.md`](struck-craft-condition-map-0_1_0.md).
 
+## What else is in this repository
+
+- **[Prompts](struck-prompts-0_1_0.md)** (v0.1.0). Two copy-and-run prompts for any AI assistant, each self-contained: produce an output that meets STRUCK, and audit an existing output against it. No tooling required.
+- **[The Claude skill](claude-skills/claude-skill-STRUCK-0_1_0.md)** (v0.1.0). A procedural encoding of STRUCK's five obligations and conformance principle, with a runtime sequence, so a partial task can be received and completed correctly.
+- **[The CRAFT condition map](struck-craft-condition-map-0_1_0.md)** (v0.1.0). A condition-by-condition account of how STRUCK carries each of CRAFT's six conditions to the face of the output.
+
 ## Relations
 
 STRUCK is independently adoptable: taking STRUCK requires taking nothing else, and STRUCK does not require CRAFT. The dependency runs the other way. CRAFT depends on ORE and STRUCK to account for what enters and leaves its chain, and a CRAFT certification is not complete without them. STRUCK draws its legibility principle from [CRAFT](https://github.com/CrossWalkri/craft-meta-standard), and its floors from the Precision-First Design Standard and the Adverse-Signal Engagement Principle, but nothing it inherits makes it need CRAFT to stand. *(See the round-room figure in the [CRAFT](https://github.com/CrossWalkri/craft-meta-standard) repository for how the three sit together.)*
