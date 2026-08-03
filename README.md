@@ -6,6 +6,14 @@ Every system that turns records into decisions eventually hands a finding to som
 
 STRUCK expands as **S**upport graded, **T**raced to origin, **R**efutation stated, **U**njudged worth, **C**ontest kept, **K**nown on its face: the five obligations any evidence-grade output must carry, plus the conformance principle that makes them checkable.
 
+<p align="center">
+<img alt="CRAFT is the meta-standard for an evaluation chain, drawn as a room whose six conditions (decision context, ontology, instruments, criteria set, decision logic, feedback) run its length from world to decision. ORE is the door in and STRUCK the door out, the two boundary standards CRAFT requires; WALKRI stands at the intake fields." src="images/standards-family-0_1_0.svg" width="880">
+</p>
+
+<p align="center">
+<img alt="ORE and STRUCK on their own: the two ends of any chain, independently adoptable, bracketing any process with or without CRAFT in the middle." src="images/ore-struck-pair-0_1_0.svg" width="820">
+</p>
+
 **[Read the specification](struck-0_1_0.md)** (v0.1.1)
 
 ## What it specifies
