@@ -10,6 +10,8 @@ license-intent: CC0
 
 CRAFT depends on ORE and STRUCK; neither depends on CRAFT. CRAFT's six conditions discipline the evaluation chain an operator builds, and a complete CRAFT certification is not whole without an account of what enters the chain at ingestion and what it hands over at exit. This document is the worked account of what CRAFT gets from STRUCK at each of the six conditions, at the exit boundary, onto the face of the output the chain hands to whoever acts on it. It is the mirror, at the other end, of the ORE-to-CRAFT condition map. As of CRAFT v0.4.5, a chain whose output is consumed outside it carries an exit boundary declaration (CRAFT Section 6.1), satisfied by adopting STRUCK or by declaring equivalent obligations; this map shows, condition by condition, what that adoption gives CRAFT.
 
+A note on the name: the title is the contribution direction, what STRUCK gives CRAFT to complete it, not a dependency of STRUCK on CRAFT. CRAFT requires STRUCK, not the reverse.
+
 The map is descriptive. Nothing here adds obligations beyond what the two specifications state; where a mapping suggests a future obligation, it is marked as a direction, not a requirement.
 
 ## Condition 1: Decision Context Specification
