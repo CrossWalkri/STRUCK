@@ -49,9 +49,14 @@ def conventions_adapter():
     schema = json.loads((DIST / "struck.schema.raw.json").read_text())
     schema["$schema"] = DRAFT
     schema["$id"] = SID
+    # Close the top-level schema to match its own tree-root $def. LinkML leaves the root
+    # object open (additionalProperties: true) even though the tree-root class is closed,
+    # which would let a combined-confidence field slip past at the top level and defeat the
+    # Section 2.4 no-combined-number rule the closed schema is meant to enforce by absence.
+    schema["additionalProperties"] = False
     (DIST / "struck.schema.json").write_text(json.dumps(schema, indent=2) + "\n")
     (DIST / "struck.schema.raw.json").unlink()
-    print("  conventions adapter: draft pinned to 2020-12, $id set")
+    print("  conventions adapter: draft pinned to 2020-12, $id set, top-level closed")
 
 
 def _zod(node):
@@ -61,6 +66,19 @@ def _zod(node):
     patterns, integers with minimums, booleans, and nullability."""
     if "enum" in node:
         return "z.enum([" + ", ".join(json.dumps(v) for v in node["enum"]) + "])"
+    # LinkML wraps an optional object slot as anyOf: [<schema>, {type: null}] (nullable).
+    # Unwrap the non-null member(s); optionality is already applied by the required-set
+    # logic below. Without this the nullable-object slots fall through to z.any().
+    if "anyOf" in node or "oneOf" in node:
+        members = node.get("anyOf") or node.get("oneOf")
+        non_null = [m for m in members if m.get("type") != "null"]
+        if len(non_null) == 1:
+            return _zod(non_null[0])
+        if non_null:
+            return "z.union([" + ", ".join(_zod(m) for m in non_null) + "])"
+        return "z.any()"
+    if "allOf" in node and len(node["allOf"]) == 1:
+        return _zod(node["allOf"][0])
     t = node.get("type")
     if isinstance(t, list):
         non_null = [x for x in t if x != "null"]

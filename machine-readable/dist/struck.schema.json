@@ -391,7 +391,7 @@
   },
   "$id": "https://raw.githubusercontent.com/CrossWalkri/STRUCK/main/machine-readable/dist/struck.schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "additionalProperties": true,
+  "additionalProperties": false,
   "description": "An output offered as evidence-grade, carrying the five STRUCK obligations on its face.",
   "metamodel_version": "1.11.0",
   "properties": {

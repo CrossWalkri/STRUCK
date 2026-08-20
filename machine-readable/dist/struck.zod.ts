@@ -41,12 +41,14 @@ export const EvidenceGradeOutput = z.object({
   "conditions": z.array(z.object({
   "world_observable": z.string().describe("S3.1/S3.2. The refuting thing, stated in terms of what could be found in the world.")
 }).strict()).optional(),
-  "unfalsifiability": z.any().optional()
+  "unfalsifiability": z.object({
+  "reason": z.enum(["definitional", "domain_limited", "impressionistic"]).describe("S3.3.")
+}).strict().optional()
 }).strict().describe("S3. Either world-terms refutation conditions, or a declared unfalsifiability that names a reason. The \"if unfalsifiable then a reason is required\" obligation is modeled as native nested-required (reason is required inside the unfalsifiability object), and the \"conditions or a declaration, never silence\" obligation as a presence-based rule. Both are enforced by a standard JSON Schema validator."),
   "worth_judgment": z.object({
   "consumer_facing": z.boolean().optional(),
   "cost_to_raise_confidence": z.string().describe("S6.2. Optional. What it would take to raise confidence and what it would cost.").optional()
 }).strict().describe("S6. The sufficiency judgment left to the consumer; no adequacy assertion.")
-});
+}).strict();
 
 export type EvidenceGradeOutput = z.infer<typeof EvidenceGradeOutput>;

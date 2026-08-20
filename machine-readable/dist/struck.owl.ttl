@@ -16,26 +16,17 @@
 struck:EvidenceGradeOutput a owl:Class ;
     rdfs:label "EvidenceGradeOutput" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom struck:DerivationChain ;
-            owl:onProperty struck:derivation_chains ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom struck:RefutationExposure ;
-            owl:onProperty struck:refutation ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom struck:ContestedRegion ;
-            owl:onProperty struck:contested_regions ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty struck:conformance ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty struck:contested_regions ],
+            owl:allValuesFrom struck:RefutationExposure ;
+            owl:onProperty struck:refutation ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty struck:derivation_chains ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty struck:graded_evidence ],
+            owl:onProperty struck:refutation ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty struck:graded_evidence ],
@@ -44,34 +35,43 @@ struck:EvidenceGradeOutput a owl:Class ;
             owl:onProperty struck:graded_evidence ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty struck:refutation ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
             owl:onProperty struck:claim ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom struck:DerivationChain ;
+            owl:onProperty struck:derivation_chains ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
             owl:onProperty struck:refutation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty struck:claim ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty struck:worth_judgment ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty struck:worth_judgment ],
+        [ a owl:Restriction ;
             owl:minCardinality 1 ;
+            owl:onProperty struck:conformance ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom struck:ConformanceDeclaration ;
             owl:onProperty struck:conformance ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty struck:claim ],
         [ a owl:Restriction ;
-            owl:allValuesFrom struck:ConformanceDeclaration ;
-            owl:onProperty struck:conformance ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty struck:worth_judgment ],
+            owl:onProperty struck:graded_evidence ],
         [ a owl:Restriction ;
             owl:allValuesFrom struck:WorthJudgment ;
             owl:onProperty struck:worth_judgment ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty struck:claim ] ;
+            owl:allValuesFrom struck:ContestedRegion ;
+            owl:onProperty struck:contested_regions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty struck:contested_regions ] ;
     skos:definition "An output offered as evidence-grade, carrying the five STRUCK obligations on its face." ;
     skos:inScheme <https://standards.crosswalkri.org/struck> .
 
@@ -79,93 +79,90 @@ struck:ConformanceDeclaration a owl:Class ;
     rdfs:label "ConformanceDeclaration" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty struck:graded_evidence_exposed ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty struck:contest_represented ],
         [ a owl:Restriction ;
             owl:allValuesFrom struck:ConformanceAnswer ;
             owl:onProperty struck:refutation_stated ],
         [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty struck:graded_evidence_exposed ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty struck:worth_left_to_consumer ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty struck:graded_evidence_exposed ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty struck:worth_left_to_consumer ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty struck:chains_labeled ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom struck:ConformanceAnswer ;
+            owl:onProperty struck:chains_labeled ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty struck:contest_represented ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty struck:refutation_stated ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom struck:ConformanceAnswer ;
+            owl:onProperty struck:worth_left_to_consumer ],
+        [ a owl:Restriction ;
             owl:allValuesFrom struck:ConformanceAnswer ;
             owl:onProperty struck:graded_evidence_exposed ],
         [ a owl:Restriction ;
-            owl:allValuesFrom struck:ConformanceAnswer ;
-            owl:onProperty struck:contest_represented ],
+            owl:minCardinality 1 ;
+            owl:onProperty struck:chains_labeled ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty struck:refutation_stated ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty struck:graded_evidence_exposed ],
-        [ a owl:Restriction ;
             owl:allValuesFrom struck:ConformanceAnswer ;
-            owl:onProperty struck:chains_labeled ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty struck:contest_represented ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom struck:ConformanceAnswer ;
-            owl:onProperty struck:worth_left_to_consumer ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty struck:chains_labeled ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty struck:chains_labeled ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty struck:worth_left_to_consumer ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty struck:worth_left_to_consumer ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty struck:refutation_stated ] ;
+            owl:onProperty struck:contest_represented ] ;
     skos:definition "S7. The five conformance questions answered on the face. There is deliberately no overall or total field: conformance is per-obligation, mirroring the refusal to combine grades (S2.4) and the SLSA Verification-Summary-Attestation shape." ;
     skos:inScheme <https://standards.crosswalkri.org/struck> .
 
 struck:ContestedRegion a owl:Class ;
     rdfs:label "ContestedRegion" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty struck:resolution_basis ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty struck:turns_on ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty struck:retained_losing_position ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty struck:support_each_side ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty struck:disputed ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty struck:retained_losing_position ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty struck:support_each_side ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty struck:disputed ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty struck:retained_losing_position ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:boolean ;
             owl:onProperty struck:unexamined ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty struck:resolution_basis ],
+            owl:onProperty struck:turns_on ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty struck:turns_on ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty struck:disputed ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty struck:unexamined ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty struck:unexamined ],
+            owl:onProperty struck:retained_losing_position ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty struck:retained_losing_position ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty struck:support_each_side ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty struck:support_each_side ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty struck:resolution_basis ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty struck:resolution_basis ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty struck:retained_losing_position ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty struck:resolution_basis ],
@@ -173,22 +170,19 @@ struck:ContestedRegion a owl:Class ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty struck:turns_on ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty struck:turns_on ],
+            owl:maxCardinality 1 ;
+            owl:onProperty struck:unexamined ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
+            owl:onProperty struck:disputed ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty struck:disputed ] ;
     skos:inScheme <https://standards.crosswalkri.org/struck> .
 
 struck:DerivationChain a owl:Class ;
     rdfs:label "DerivationChain" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty struck:converges_with ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty struck:stopped_at ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty struck:stopped_at ],
         [ a owl:Restriction ;
@@ -196,77 +190,83 @@ struck:DerivationChain a owl:Class ;
             owl:onProperty struck:stop_reason ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty struck:stopped_at ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty struck:stop_reason ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty struck:converges_with ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty struck:stopped_at ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty struck:stop_reason ],
         [ a owl:Restriction ;
             owl:allValuesFrom struck:Rung ;
             owl:onProperty struck:rungs ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty struck:stop_reason ],
-        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty struck:rungs ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty struck:stopped_at ] ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty struck:converges_with ] ;
     skos:inScheme <https://standards.crosswalkri.org/struck> .
 
 struck:DimensionGrade a owl:Class ;
     rdfs:label "DimensionGrade" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty struck:weakest_assessment ],
+            owl:onProperty struck:dimension ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty struck:weakest_assessment ],
+            owl:onProperty struck:dimension ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty struck:dimension ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty struck:flags ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty struck:dimension ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty struck:dimension ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty struck:flags ],
-        [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty struck:dimension ],
+            owl:onProperty struck:weakest_assessment ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty struck:weakest_assessment ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty struck:weakest_assessment ] ;
+            owl:onProperty struck:weakest_assessment ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty struck:flags ] ;
     skos:inScheme <https://standards.crosswalkri.org/struck> .
 
 struck:GradeProfile a owl:Class ;
     rdfs:label "GradeProfile" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom struck:DimensionGrade ;
-            owl:onProperty struck:per_dimension ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty struck:joint_support_flag ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty struck:joint_support_flag ],
-        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty struck:per_dimension ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty struck:joint_support_flag ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty struck:open_posture_ungraded ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty struck:open_posture_ungraded ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom struck:DimensionGrade ;
+            owl:onProperty struck:per_dimension ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty struck:joint_support_flag ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty struck:joint_support_flag ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty struck:open_posture_ungraded ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
             owl:onProperty struck:open_posture_ungraded ] ;
     skos:definition "Per-dimension grade of the support; no combined figure (S2.4)." ;
     skos:inScheme <https://standards.crosswalkri.org/struck> .
@@ -274,24 +274,30 @@ struck:GradeProfile a owl:Class ;
 struck:RefutationCondition a owl:Class ;
     rdfs:label "RefutationCondition" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:maxCardinality 1 ;
             owl:onProperty struck:world_observable ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty struck:world_observable ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty struck:world_observable ] ;
     skos:inScheme <https://standards.crosswalkri.org/struck> .
 
 struck:Rung a owl:Class ;
     rdfs:label "Rung" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty struck:role ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty struck:identifier ],
+            owl:onProperty struck:restates ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom struck:RungRole ;
+            owl:onProperty struck:role ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty struck:identifier ],
+            owl:onProperty struck:restates ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty struck:restates ],
@@ -300,16 +306,10 @@ struck:Rung a owl:Class ;
             owl:onProperty struck:role ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty struck:role ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty struck:restates ],
+            owl:onProperty struck:identifier ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty struck:restates ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom struck:RungRole ;
-            owl:onProperty struck:role ],
+            owl:onProperty struck:identifier ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty struck:identifier ] ;
@@ -318,13 +318,13 @@ struck:Rung a owl:Class ;
 struck:Unfalsifiability a owl:Class ;
     rdfs:label "Unfalsifiability" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty struck:reason ],
-        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty struck:reason ],
         [ a owl:Restriction ;
             owl:allValuesFrom struck:UnfalsifiabilityReason ;
+            owl:onProperty struck:reason ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty struck:reason ] ;
     skos:definition "S3.3. A declared unfalsifiability names a reason (native nested-required)." ;
     skos:inScheme <https://standards.crosswalkri.org/struck> .
@@ -332,23 +332,23 @@ struck:Unfalsifiability a owl:Class ;
 struck:WorthJudgment a owl:Class ;
     rdfs:label "WorthJudgment" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty struck:consumer_facing ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty struck:cost_to_raise_confidence ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty struck:consumer_facing ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty struck:cost_to_raise_confidence ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty struck:cost_to_raise_confidence ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty struck:consumer_facing ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty struck:consumer_facing ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty struck:cost_to_raise_confidence ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:boolean ;
-            owl:onProperty struck:consumer_facing ] ;
+            owl:onProperty struck:consumer_facing ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty struck:cost_to_raise_confidence ] ;
     skos:definition "S6. The sufficiency judgment left to the consumer; no adequacy assertion." ;
     skos:inScheme <https://standards.crosswalkri.org/struck> .
 
@@ -367,20 +367,20 @@ struck:WorthJudgment a owl:Class ;
 struck:RefutationExposure a owl:Class ;
     rdfs:label "RefutationExposure" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty struck:unfalsifiability ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty struck:unfalsifiability ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom struck:Unfalsifiability ;
             owl:onProperty struck:unfalsifiability ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty struck:conditions ],
         [ a owl:Restriction ;
             owl:allValuesFrom struck:RefutationCondition ;
-            owl:onProperty struck:conditions ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty struck:unfalsifiability ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom struck:Unfalsifiability ;
-            owl:onProperty struck:unfalsifiability ] ;
+            owl:onProperty struck:conditions ] ;
     skos:definition "S3. Either world-terms refutation conditions, or a declared unfalsifiability that names a reason. The \"if unfalsifiable then a reason is required\" obligation is modeled as native nested-required (reason is required inside the unfalsifiability object), and the \"conditions or a declaration, never silence\" obligation as a presence-based rule. Both are enforced by a standard JSON Schema validator." ;
     skos:inScheme <https://standards.crosswalkri.org/struck> .
 
