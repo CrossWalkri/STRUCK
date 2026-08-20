@@ -46,6 +46,7 @@ The full worked account is in [`struck-craft-condition-map-0_1_0.md`](struck-cra
 - **[Prompts](struck-prompts-0_1_0.md)** (v0.1.0). Two copy-and-run prompts for any AI assistant, each self-contained: produce an output that meets STRUCK, and audit an existing output against it. No tooling required.
 - **[The Claude skill](claude-skills/claude-skill-STRUCK-0_1_0.md)** (v0.1.0). A procedural encoding of STRUCK's five obligations and conformance principle, with a runtime sequence, so a partial task can be received and completed correctly.
 - **[The CRAFT condition map](struck-craft-condition-map-0_1_0.md)** (v0.1.0). A condition-by-condition account of how STRUCK carries each of CRAFT's six conditions to the face of the output.
+- **[Machine-readable layer](machine-readable/README.md)**. JSON Schema, Zod, JSON-LD, SHACL, OWL, GraphQL, and a per-obligation conformance verdict, all generated from one LinkML source so no format can drift from the standard. The file to validate against is `machine-readable/dist/struck.schema.json`.
 
 ## Relations
 
