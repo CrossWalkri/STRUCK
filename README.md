@@ -60,6 +60,10 @@ ORE and STRUCK were also designed to work as a pair, the two ends of a chain: OR
 
 They are the same discipline at two boundaries, but not one posture set mirrored. ORE declares an intake posture (Screened, Graded, or Open) for how and when sources are admitted. The exit boundary has its own modes, because it varies by what an output is for and who bears its consequences, not by how sources were admitted. Same shape, different content: each boundary's postures answer that boundary's question, and the two questions differ. (The general term for what leaves is the output; "finding" is one register of output, native to evidentiary work, not the umbrella.)
 
+## Machine-readable layer
+
+This standard ships a machine-readable fetch surface (a JSON Schema, a typed register of its provisions, and conformant and non-conformant examples) for a consumer that ingests it as data rather than reading the prose. It lives as one source in [Polymathie-Studio/tools](https://github.com/Polymathie-Studio/tools): source under `machine-readable/craft/struck/`, the generated schema under `schema/craft/struck/`, indexed by the [CRAFT family manifest](https://raw.githubusercontent.com/Polymathie-Studio/tools/main/schema/craft/craft-manifest.json). This standard's schema: https://raw.githubusercontent.com/Polymathie-Studio/tools/main/schema/craft/struck/struck.schema.json
+
 ## License
 
 CC0 1.0 Universal. No permission or fee, no attribution required. See [LICENSE](LICENSE).
